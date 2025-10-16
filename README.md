@@ -61,13 +61,6 @@ I don’t hard‑code any API keys. Instead, the app calls a tiny **Cloudflare W
 
 ---
 
-## 🛣️ Roadmap
-- Global leaderboard (Firebase) with write‑only rules
-- More handcrafted scenarios + localization
-- “Senior Mode” (larger UI, optional narration)
-
----
-
 ## 🧰 Tech
 **HTML/CSS/JS** only. Hosted with GitHub Pages. AI via **OpenAI GPT‑5 nano** through a Cloudflare Worker proxy I own.
 
