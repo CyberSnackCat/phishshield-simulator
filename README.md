@@ -10,7 +10,6 @@
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-ai-generator-gpt-5-nano">AI Generator</a> •
   <a href="#-accessibility--privacy">Accessibility & Privacy</a> •
-  <a href="#-roadmap">Roadmap</a>
 </p>
 
 ---
