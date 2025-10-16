@@ -52,7 +52,7 @@ python3 -m http.server 8080
 ## 🤖 AI Generator (GPT‑5 nano)
 I don’t hard‑code any API keys. Instead, the app calls a tiny **Cloudflare Worker** you control. The Worker stores your OpenAI key securely and forwards requests to OpenAI.
 
-
+---
 
 ## ♿ Accessibility & 🔒 Privacy
 - **Accessibility:** dyslexia‑friendly spacing, high‑contrast theme, keyboard focus rings.
