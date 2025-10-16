@@ -2,7 +2,7 @@
   <img src="screenshots/cover.png" alt="PhishShield Simulator" width="720" />
 </p>
 
-<h1 align="center">PhishShield Simulator — by Benjamin</h1>
+<h1 align="center">PhishShield Simulator</h1>
 
 <p align="center">
   <a href="#-why-this-exists">Why this exists</a> •
