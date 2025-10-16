@@ -53,28 +53,7 @@ python3 -m http.server 8080
 ## 🤖 AI Generator (GPT‑5 nano)
 I don’t hard‑code any API keys. Instead, the app calls a tiny **Cloudflare Worker** you control. The Worker stores your OpenAI key securely and forwards requests to OpenAI.
 
-This package is preconfigured to use your Worker endpoint:
-```
-https://phishshield-ai-proxy.bgreenbayboy.workers.dev/
-```
-If you redeploy later, update the endpoint in `index.html`:
-```html
-<script>
-  window.CONFIG = { ai: { endpoint: 'https://your-worker.workers.dev/' } };
-</script>
-```
 
-### Worker security
-- **No secrets in this repo** — only the Worker URL is public.
-- In Cloudflare’s new UI, add your OpenAI key to **Secrets Store**, then **Add Binding → Connect to Secret Store** and bind it as `OPENAI_SECRET`.
-- The Worker code reads it via `await env.OPENAI_SECRET.get()`.
-
-### CORS
-If you publish to GitHub Pages, set the Worker CORS allowlist (in `corsHeaders`) to include:
-- `https://cybersnackcat.github.io` (origin)
-- your local dev origin (e.g., `http://127.0.0.1:5500` or `http://localhost:8080`)
-
----
 
 ## ♿ Accessibility & 🔒 Privacy
 - **Accessibility:** dyslexia‑friendly spacing, high‑contrast theme, keyboard focus rings.
@@ -90,7 +69,7 @@ If you publish to GitHub Pages, set the Worker CORS allowlist (in `corsHeaders`)
 ---
 
 ## 🧰 Tech
-**HTML/CSS/JS** only. Hosted with GitHub Pages. AI via **OpenAI GPT‑5 nano** through a Cloudflare Worker proxy you own.
+**HTML/CSS/JS** only. Hosted with GitHub Pages. AI via **OpenAI GPT‑5 nano** through a Cloudflare Worker proxy I own.
 
 ---
 
