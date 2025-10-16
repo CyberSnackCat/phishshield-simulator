@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishShield Simulator — Learn to Spot Phishing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Configuration — safe to keep public. This is ONLY the proxy endpoint (no secrets).
+    // You can change this later if you redeploy the Worker.
+    window.CONFIG = {
+      ai: { endpoint: 'https://phishshield-ai-proxy.bgreenbayboy.workers.dev/' }
+      // firebase: { ... }  // optional later
+    };
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>PhishShield Simulator</h1>
+    <nav class="toolbar">
+      <button id="btn-start" class="btn primary">Start</button>
+      <button id="btn-how" class="btn">How it works</button>
+      <button id="btn-tips" class="btn">Safety Tips</button>
+      <button id="btn-leaderboard" class="btn">🏆 Leaderboard</button>
+      <button id="btn-certificate" class="btn" disabled>📄 Certificate</button>
+      <div class="toggles">
+        <button id="btn-contrast" class="btn small" aria-pressed="false">High Contrast</button>
+        <button id="btn-dyslexia" class="btn small" aria-pressed="false">Aa Dyslexia</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <aside class="panel settings" id="panel-settings">
+      <h2>New Session</h2>
+      <label class="label">Difficulty</label>
+      <select id="difficulty">
+        <option value="1">Level 1 — Obvious</option>
+        <option value="2">Level 2 — Tricky</option>
+        <option value="3">Level 3 — Spear‑phishing</option>
+        <option value="mix" selected>Mixed</option>
+      </select>
+
+      <label class="label">Rounds</label>
+      <input type="number" id="rounds" min="3" max="15" value="6">
+
+      <div class="hr"></div>
+      <h3>Generator Options</h3>
+      <label style="display:flex;align-items:center;gap:.5rem">
+        <input type="checkbox" id="use-ai"> Use AI generator (GPT‑5 nano) when available
+      </label>
+      <p class="muted">AI requires a small serverless proxy (already set here via your Cloudflare Worker).</p>
+      <button id="btn-generate" class="btn small">Generate New Emails</button>
+    </aside>
+
+    <section class="game" id="game" aria-live="polite">
+      <div class="hud">
+        <div>Round: <span id="hud-round">0</span>/<span id="hud-total">0</span></div>
+        <div>Score: <span id="hud-score">0</span></div>
+        <div>Mistakes: <span id="hud-mistakes">0</span></div>
+        <div class="spacer"></div>
+        <button id="btn-skip" class="btn small">Skip</button>
+      </div>
+
+      <div class="email">
+        <header class="email-header">
+          <div><strong>From:</strong> <span id="field-from"></span></div>
+          <div><strong>Subject:</strong> <span id="field-subject"></span></div>
+        </header>
+        <article class="email-body" id="email-body">
+          <!-- injected HTML per scenario -->
+        </article>
+        <footer class="email-footer">
+          <div id="attachments" class="attachments"></div>
+        </footer>
+      </div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div class="actions">
+        <button id="btn-finish" class="btn" disabled>Finish Round</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Leaderboard Dialog -->
+  <dialog id="leaderboard-dialog" aria-label="Leaderboard">
+    <h3>🏆 Leaderboard</h3>
+    <ol id="leaderboard-list" class="leaderboard"></ol>
+    <div class="lb-actions">
+      <input id="player-name" class="input" placeholder="Your name or initials" maxlength="24">
+      <button id="btn-save-score" class="btn primary">Save Score</button>
+      <button id="btn-clear-lb" class="btn small">Clear (this device)</button>
+      <button id="btn-close-lb" class="btn">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Tutorial Dialog -->
+  <dialog id="how-dialog" aria-label="How it Works">
+    <h3>📘 How PhishShield Works</h3>
+    <p>Read the email. Click anything suspicious (links, buttons, sender, attachments). Each correct click explains <em>why</em> it’s risky.</p>
+    <p>When you think you’ve found everything, click <strong>Finish Round</strong>. You’ll see what you missed.</p>
+    <h4>Common Tells</h4>
+    <ul>
+      <li>Urgency &amp; fear ("act now", "your account will be closed")</li>
+      <li>Mismatched sender vs. display name</li>
+      <li>Look‑alike domains (e.g., <code>amaz0n.com</code>)</li>
+      <li>Unexpected attachments (especially .zip/.exe)</li>
+      <li>Requests for passwords or MFA codes</li>
+    </ul>
+    <button id="btn-close-how" class="btn">Close</button>
+  </dialog>
+
+  <!-- Tips Dialog -->
+  <dialog id="tips-dialog" aria-label="Safety Tips">
+    <h3>🛡️ Safety Tips</h3>
+    <ul>
+      <li>Hover over links to preview the real URL.</li>
+      <li>Check the sender domain carefully. Tiny changes matter.</li>
+      <li>Never enter credentials from an email link; go to the site directly.</li>
+      <li>Enable MFA. Use password managers; prefer long passphrases.</li>
+      <li>When unsure, forward to a trusted person or IT help desk.</li>
+    </ul>
+    <button id="btn-close-tips" class="btn">Close</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

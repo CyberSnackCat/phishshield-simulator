@@ -1,0 +1,7 @@
+.cert{max-width:900px;margin:2rem auto;padding:2rem;border:8px double #222;background:#fff;color:#111;text-align:center;font-family:Georgia, 'Times New Roman', serif}
+.cert h1{font-size:2.2rem;margin:.5rem 0}
+.cert h2{font-size:2rem;margin:.25rem 0}
+.cert h3{font-size:1.4rem;margin:.25rem 0}
+.cert .date{margin-top:1rem;color:#333}
+.btn{background:#111;color:#fff;border:none;padding:.6rem 1.2rem;border-radius:6px;cursor:pointer}
+@media print{ .actions{display:none} body{background:#fff} }

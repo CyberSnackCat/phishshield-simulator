@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishShield Certificate</title>
+  <link rel="stylesheet" href="certificate.css">
+</head>
+<body>
+  <div class="cert">
+    <h1>Certificate of Completion</h1>
+    <p>This certifies that</p>
+    <h2 id="cert-name">PLAYER</h2>
+    <p>successfully completed the</p>
+    <h3>PhishShield Simulator</h3>
+    <p>with a score of <strong id="cert-score"></strong> over <strong id="cert-rounds"></strong> round(s) and <strong id="cert-mistakes"></strong> mistake(s).</p>
+    <p class="date" id="cert-date"></p>
+    <div class="actions">
+      <button onclick="window.print()" class="btn">Print / Save as PDF</button>
+    </div>
+  </div>
+  <script src="certificate.js"></script>
+</body>
+</html>
