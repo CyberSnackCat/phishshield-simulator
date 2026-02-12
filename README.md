@@ -15,7 +15,7 @@
 ---
 
 ## 🧭 Why this exists
-Hi! I’m **Benjamin**. I built this project to help people (especially my community and older adults) practice **spotting phishing emails** in a safe, interactive way. It’s fast, friendly, and doesn't invade your privacy. If it helps you or your family stay safe online, then that makes me happy. My grandma got into trouble by clicking on a phishing email and it helped me realize just how many fake emails people get from people trying to steal money. Don't let them steal your money!
+Hi! I’m **Benjamin**. i built this project to help people (especially my community and older adults) practice **spotting phishing emails** in a safe and fun way. It’s fast, friendly and doesn't invade your privacy. If it helps you or your family stay safe online, then that makes me happy. My grandma got into trouble by clicking on a phishing email and it helped me realize just how many fake emails people get from people trying to steal money. Don't let them steal your money!
 ---
 
 ## ✨ Features
