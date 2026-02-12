@@ -1,0 +1,8 @@
+# Development Notes
+
+- I built this project about four months ago when i was building my CyberSafe project and havent touched it since then. I'm writing this now because I wanted to clean things up and explain how I did it.
+- The hardest part at the beginning was figuring out how to get the agent and ChatGPT to help me build the phishing simulator. ChatGPT kept telling me to use a Cloudflare Worker, but I had no idea what that even was. I had to read a bunch of random posts and docs online until I finally understood how to set one up.
+- Once I got the Worker running, I had to pick a model for the AI part. I didn’t want to use something expensive and I talked about this with my mom so we could budget. I compared the prices on the different models. That’s how I found GPT‑5 Nano. It was cheap enough and still good for what I needed.
+- The first version of the site was built with MkDocs because it’s Python‑based and just like what I was doing with the CyberSafe site. I was in the middle of learning Python so it was what I wanted. 
+- I ran into problems getting the AI part to work properly. I need to debug this and get it working so people can keep getting random test emails that are different every time. If I had more time, I’d add better reporting and maybe a nicer UI. Right now it’s simple, but it works and it taught me a lot.
+- I use this to show seniors examples of the kind of emails they should watch out for. I started with an Amazon one because that is what got my grandma into trouble. (Never click on sketchy links. Never.)
